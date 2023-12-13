@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalnia&family=Roboto:ital,wght@0,100;0,400;0,500;1,400&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #9d9a95;
+    width: 100%;
+} 
+
+.btn{
+    background-color: #88AB8E;
+}
+
+.card{
+
+    box-shadow: 10px 20px 30px rgb(185, 109, 109);
+}
+
+.fa-solid {
+    font-size: 1.5rem;
+    color: #88AB8E;
+}
+
+
+.list-group li{
+   
+    border: none;
+}
+.pageCard{
+    background-color: rgb(185, 201, 131);
+}
+.pageCardTwo{
+    background-color: rgb(185, 201, 131);
+}
