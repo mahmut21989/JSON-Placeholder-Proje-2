@@ -5,46 +5,34 @@ async function getUsers() {
   const data = await response.json();
   data.forEach(user => {
     createCard(user);
-  });  
+  });
 }
 
 function createCard(user) {
-  row.innerHTML += ` <div class="card p-3 m-5 pageCard" style='width:20rem'>
-  <div class='card-title '> 
-    <div class='user d-flex '>
-      <i class="fa-solid fa-user pe-2 pt-1" ></i>
-       <h3 >${user.id}</h3>
-    </div>
-    <h3 class='fw-bold'>${user.name} </h3>
-    <h3>${user.username} </h3>
-    <div class='email d-flex'>
-      <i class="fa-solid fa-square-envelope pe-1"></i>
-      <div>${user.email}</div>
-    </div>
-  </div>
-  <div class="card-body d-flex">
+  row.innerHTML += ` <div class="parent">
+  <div class="card">
+      <div class="content-box">
+     
+          <h1 class="card-title"><i class="fa-solid fa-user" ></i>&nbsp ${user.name} </h1>
+          <h3 class='fw-bold'>${user.username}</h3>
+          <p class="card-content">
+          <i class="fa-solid fa-phone ps-2 pt-1"></i>&nbsp &nbsp
+          ${user.phone}
+          </p>
+          <p> Address: <br/>
+           <i class="fa-solid fa-location-dot pe-2"></i>&nbsp${user.address.street}
+           ${user.address.suite} ${user.address.city} ${user.address.geo.lat}
+           </p>
+          
+         
+      </div>
    
-      <i class="fa-solid fa-building pe-2"></i>
-       <p>Company: ${user.company.name} ${user.company.catchPhrase} ${user.company.bs}</p>
-    
+      <div class="date-box">
+          <span class="month"></span>
+          <span class="date"> <p>${user.id}</p></span>
+      </div>
+     
   </div>
-  <div class="card-body d-flex">
-    <i class="fa-solid fa-location-dot pe-2"></i>
-     <p>Address: ${user.address.street} ${user.address.suite} ${user.address.city} 
-     ${user.address.zipcode}
-     ${user.address.geo.lat} ${user.address.geo.lng}
-     </p>
-  </div>
-  <ul class="list-group list-group-flush ">
-      <i class="fa-solid fa-phone ps-2 pt-1"></i>
-    <div class='phone d-flex '>
-       <li class="list-group-item pageCardTwo">Phone: ${user.phone}</li>
-    </div>
-    <div class='website d-flex'>
-      <i class="fa-solid fa-globe ps-2 pt-1"></i>
-      <li class="list-group-item pageCardTwo">Website: ${user.website}</li>
-    </div>
-  </ul>
 </div>`;
 }
 

@@ -33,21 +33,19 @@ async function getUsers(userId) {
   }
 
 function createCard(post) {
-  row.innerHTML += ` <div class="card p-3 m-5 " style='width:20rem'>
-  <div class='card-title '> 
-    <div class='user d-flex '>
-      <i class="fa-solid fa-user pe-2 pt-1" ></i>
-       <h3 >${post.id}</h3>
-    </div>
-    <h3 class='fw-bold'>${post.userId} </h3> 
-  </div>
-  <div class="card-body d-flex">
-      <i class="fa-solid fa-building pe-2"></i>
-       <h3>${post.title} </h3>
-  </div>
-  <div class="card-body ">
-     <p> ${post.body} 
-     </p>
+  row.innerHTML += ` <div class="parent card2">
+  <div class="card">
+      <div class="content-box">
+          <h1 class="card-title">${post.title}</h1>
+          <p class="card-content">
+          ${post.body}
+          </p>
+         
+      </div>
+      <div class="date-box">
+          <span class="month">${post.id}</span>
+          <span class="date">${post.userId}</span>
+      </div>
   </div>
 </div>`;
 }
